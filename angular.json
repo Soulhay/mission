@@ -32,7 +32,8 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+              "vercel.json"
             ],
             "styles": [
               "src/styles.css"
