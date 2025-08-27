@@ -32,8 +32,7 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              },
-              "vercel.json"
+              }
             ],
             "styles": [
               "src/styles.css"
@@ -61,12 +60,10 @@
               "sourceMap": true
             },
             "en": {
-              "localize": ["en-US"],
-              "baseHref": "/mission/en-US/"
+              "localize": ["en-US"]
             },
             "sl": {
-              "localize": ["sl"],
-              "baseHref": "/mission/sl/"
+              "localize": ["sl"]
             }
           },
           "defaultConfiguration": "production"
