@@ -21,6 +21,7 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "outputPath": "dist/test-app",
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js",
@@ -59,7 +60,8 @@
               "sourceMap": true
             },
             "en": {
-              "localize": ["en-US"]
+              "localize": ["en-US"],
+              "baseHref": "/en-US/"
             },
             "sl": {
               "localize": ["sl"]
