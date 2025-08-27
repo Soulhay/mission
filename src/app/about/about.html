@@ -1,0 +1,31 @@
+<h2>About Us</h2>
+<p>This page demonstrates a simple form with basic validation.</p>
+
+<form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" [(ngModel)]="formData.name" required #name="ngModel">
+    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="validation-error">
+      Name is required.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" [(ngModel)]="formData.email" required email #email="ngModel">
+    <div *ngIf="email.invalid && (email.dirty || email.touched)" class="validation-error">
+      <div *ngIf="email.errors?.['required']">Email is required.</div>
+      <div *ngIf="email.errors?.['email']">Please enter a valid email.</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" [(ngModel)]="formData.message" required #message="ngModel"></textarea>
+    <div *ngIf="message.invalid && (message.dirty || message.touched)" class="validation-error">
+      Message is required.
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="contactForm.invalid">Submit</button>
+</form>

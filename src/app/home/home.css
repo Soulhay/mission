@@ -1,0 +1,333 @@
+.controls {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  flex-wrap: wrap; /* Allow controls to wrap on smaller screens */
+  align-items: center;
+}
+
+input[type="text"] {
+  flex-grow: 1; /* Allow input to take available space */
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 16px;
+  transition: border-color 0.3s;
+  min-width: 150px; /* Ensure input is not too small */
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: #1a73e8;
+  box-shadow: 0 0 5px rgba(26, 115, 232, 0.2);
+}
+
+button {
+  background-color: #28a745; /* Green for show/hide */
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  white-space: nowrap; /* Prevent button text from wrapping */
+}
+
+button:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 10px; /* Slightly more space */
+  padding: 15px 20px; /* More padding */
+  border-radius: 8px; /* Slightly more rounded */
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  display: flex; /* For better content alignment */
+  justify-content: space-between; /* Space out content */
+  align-items: center;
+}
+
+li:hover {
+  transform: translateY(-3px); /* More pronounced lift */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12); /* Stronger shadow */
+  background-color: #eaf3ff; /* Light blue on hover */
+}
+
+.no-items-message {
+  text-align: center;
+  color: #888;
+  margin-top: 30px;
+  font-style: italic;
+}
+
+/* Animation container */
+.item-list {
+  position: relative; /* Needed for animation positioning */
+  min-height: 100px; /* Prevent layout shift when list is empty */
+}
+
+/* Responsive adjustments for home page */
+@media (max-width: 600px) {
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  input[type="text"],
+  .controls button {
+    width: 100%;
+  }
+}
+
+.header-section {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.controls {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+input[type="text"] {
+  flex-grow: 1;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 16px;
+  transition: border-color 0.3s;
+  min-width: 150px;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: #1a73e8;
+  box-shadow: 0 0 5px rgba(26, 115, 232, 0.2);
+}
+
+button {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  white-space: nowrap;
+}
+
+button:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+.form-container {
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.validation-error {
+  color: #d93025;
+  font-size: 14px;
+  margin-top: 5px;
+  font-style: italic;
+}
+
+/* Card layout */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-title {
+  font-weight: 500;
+  font-size: 1.2em;
+  color: #1a73e8;
+  margin-bottom: 5px;
+}
+
+.card-type {
+  font-size: 0.9em;
+  color: #555;
+}
+
+.no-items-message {
+  grid-column: 1 / -1; /* Center the message across all columns */
+  text-align: center;
+  color: #888;
+  margin-top: 30px;
+  font-style: italic;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column; /* Stack controls on mobile */
+  gap: 15px;
+  margin-bottom: 25px;
+  align-items: stretch; /* Stretch to full width on mobile */
+}
+
+/* New button styles */
+.controls button {
+  background-color: #28a745; /* Green for show/hide */
+}
+
+.controls .remove-all-button {
+  background-color: #dc3545; /* Red for remove all */
+}
+
+.controls .save-button {
+  background-color: #007bff; /* Blue for save */
+}
+
+.controls button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1); /* Slight brightness change on hover */
+}
+
+/* Card styles */
+.card {
+  /* ... existing card styles ... */
+  position: relative; /* Needed for positioning the remove button */
+}
+
+.card .remove-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #f8f9fa;
+  color: #6c757d;
+  border: 1px solid #ced4da;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  line-height: 1;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.card .remove-button:hover {
+  background-color: #dc3545;
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.no-items-message {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #888;
+  margin-top: 30px;
+  font-style: italic;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column; /* Stack controls on mobile */
+  gap: 15px;
+  margin-bottom: 25px;
+  align-items: stretch; /* Stretch to full width on mobile */
+}
+
+input[type="text"],
+.controls button {
+  width: 100%;
+}
+
+.form-container {
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  margin-bottom: 20px;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column on mobile */
+  gap: 15px;
+}
+
+/* Tablet and Desktop Styles */
+@media (min-width: 600px) {
+  .controls {
+    flex-direction: row; /* Row layout on larger screens */
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  input[type="text"] {
+    width: auto;
+    flex-grow: 1;
+  }
+
+  .cards-container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+}

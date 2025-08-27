@@ -1,0 +1,45 @@
+<div class="header-section">
+  <h2 i18n="@@homeTitle">Welcome to the Home Page!</h2>
+  <p i18n="@@homeDescription">This is a list of items with filtering and toggling functionality.</p>
+</div>
+
+<div class="controls">
+  <input type="text" [(ngModel)]="filterText" (ngModelChange)="filterItems()" i18n-placeholder="@@filterPlaceholder" placeholder="Filter items...">
+  <button (click)="toggleListVisibility()" i18n="@@toggleButton">{{ showList ? 'Hide List' : 'Show List' }}</button>
+  <button (click)="removeAllItems()" class="remove-all-button" i18n="@@removeAllButton">Remove All</button>
+  <button (click)="saveToTextFile()" class="save-button" i18n="@@saveButton">Save to .txt</button>
+</div>
+
+<div class="form-container">
+  <h3>Add a New Item</h3>
+  <form #addItemForm="ngForm" (ngSubmit)="onSubmit(addItemForm)">
+    <div class="form-group">
+      <label for="itemName">Name:</label>
+      <input type="text" id="itemName" name="itemName" [(ngModel)]="newItem.name" required #itemName="ngModel">
+      <div *ngIf="itemName.invalid && (itemName.dirty || itemName.touched)" class="validation-error">
+        Name is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="itemType">Type:</label>
+      <input type="text" id="itemType" name="itemType" [(ngModel)]="newItem.type" required #itemType="ngModel">
+      <div *ngIf="itemType.invalid && (itemType.dirty || itemType.touched)" class="validation-error">
+        Type is required.
+      </div>
+    </div>
+    <button type="submit" [disabled]="addItemForm.invalid">Add Item</button>
+  </form>
+</div>
+
+<div *ngIf="showList" class="cards-container" [@listAnimation]>
+  <div *ngFor="let item of filteredItems" class="card">
+    <div class="card-content">
+      <div class="card-title">{{ item.name }}</div>
+      <div class="card-type">{{ item.type }}</div>
+    </div>
+    <button (click)="removeItem(item.id)" class="remove-button">&times;</button>
+  </div>
+  <div *ngIf="filteredItems.length === 0" class="no-items-message">
+    No items match your filter.
+  </div>
+</div>
