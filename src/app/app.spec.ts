@@ -1,10 +1,15 @@
 import { TestBed } from '@angular/core/testing';
-import { App } from './app';
+import { App } from './app'; // Use AppComponent
+import { provideRouter } from '@angular/router'; // Import provideRouter
+import { routes } from './app.routes'; // Import your application routes
 
 describe('App', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [App],
+      providers: [
+        provideRouter(routes) // Add this line
+      ]
     }).compileComponents();
   });
 

@@ -7,17 +7,19 @@ import { CommonModule } from '@angular/common';
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, RouterLink, RouterLinkActive, CommonModule, FormsModule],
-  template: `
+ template: `
     <nav>
-      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" i18n="@@homeLink">Home</a>
-      <a routerLink="/about" routerLinkActive="active" i18n="@@aboutLink">About</a>
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>
+      <a routerLink="/about" routerLinkActive="active">About</a>
     </nav>
     <div class="container">
+      <h1>Hello, {{title()}}</h1> // Add this line
       <router-outlet></router-outlet>
     </div>
   `,
   styleUrl: './app.css'
 })
+
 export class App {
   protected readonly title = signal('test-app');
 }
