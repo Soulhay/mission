@@ -62,10 +62,11 @@
             },
             "en": {
               "localize": ["en-US"],
-              "baseHref": "/en-US/"
+              "baseHref": "/mission/en-US/"
             },
             "sl": {
-              "localize": ["sl"]
+              "localize": ["sl"],
+              "baseHref": "/mission/sl/"
             }
           },
           "defaultConfiguration": "production"
@@ -112,6 +113,20 @@
             "styles": [
               "src/styles.css"
             ]
+          }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "baseHref": "/mission/"
+          },
+          "configurations": {
+            "en": {
+              "baseHref": "/mission/en-US/"
+            },
+            "sl": {
+              "baseHref": "/mission/sl/"
+            }
           }
         }
       }
