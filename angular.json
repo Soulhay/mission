@@ -112,21 +112,19 @@
             ]
           }
         },
-        "deploy": {
-          "builder": "angular-cli-ghpages:deploy",
-          "options": {
-            "baseHref": "/mission/"
-          },
-          "configurations": {
-            "en": {
-              "baseHref": "/mission/en-US/"
-            },
-            "sl": {
-              "baseHref": "/mission/sl/"
+          "deploy": {
+            "builder": "angular-cli-ghpages:deploy",
+            "options": {},
+            "configurations": {
+              "en": {
+                "baseHref": "/mission/en-US/"
+              },
+              "sl": {
+                "baseHref": "/mission/sl/"
+              }
             }
           }
         }
       }
     }
   }
-}
