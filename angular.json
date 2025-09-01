@@ -116,12 +116,6 @@
             "builder": "angular-cli-ghpages:deploy",
             "options": {},
             "configurations": {
-              "en": {
-                "baseHref": "/mission/en-US/"
-              },
-              "sl": {
-                "baseHref": "/mission/sl/"
-              }
             }
           }
         }
